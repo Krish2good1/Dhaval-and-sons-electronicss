@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Info</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .contact-section {
+            background-color: #007185;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .contact-section h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .contact-section p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .contact-details {
+            margin-top: 20px;
+        }
+        .contact-details a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .social-links a:hover {
+            color: #ffd700;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 80%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-info h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+        .product-info p {
+            margin: 5px 0;
+        }
+        .product button {
+            background-color: #007185;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .product button:hover {
+            background-color: #005f6b;
+        }
+        .cart {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 80%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .cart h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item p {
+            margin: 0;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Mobile adjustments for navigation */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+            .product {
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+            }
+        }
+
+        .coming-soon-message {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .coming-soon-message h3 {
+            font-size: 1.5em;
+            color: #007185;
+        }
+
+        .coming-soon-message p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .coming-soon-message a {
+            color: #1319e0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Styling for the search bar */
+        input[type="text"] {
+            padding: 0.5rem;
+            width: 200px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+    </style>
+
+    <script>
+        let totalPrice = 0;
+
+        // Function to update the total price
+        function updateTotalPrice() {
+            let checkboxes = document.querySelectorAll('.product-checkbox');
+            totalPrice = 0;
+
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    let price = parseInt(checkbox.getAttribute('data-price'));
+                    totalPrice += price;
+                }
+            });
+
+            // Update the total price in the cart section
+            document.getElementById('total-price').innerText = 'Total: ₹' + totalPrice;
+        }
+
+        // Function to proceed to buy
+        function proceedToBuy() {
+            if (totalPrice > 0) {
+                window.location.href = "payment.html?total=" + totalPrice;
+            } else {
+                alert("Please select items to proceed.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Dhaval and Sons Electronics</h1>
+        <p>Your one-stop shop for all electronic needs!</p>
+    </header>
+
+    <nav>
+        <input type="text" id="serch" name="serch" placeholder="Search">
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About Us</a>
+        <a href="contect.html">Contact</a>
+        <a href="login.html">Account</a>
+    </nav>
+
+    <!-- Product 1 -->
+    <div class="product">
+        <img src="iphone.webp" alt="Product Image">
+        <div class="product-info">
+            <h3>I-phone 16</h3>
+            <p>₹74,999</p>
+        </div>
+        <input type="checkbox" class="product-checkbox" data-price="74999" onchange="updateTotalPrice()">
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+        <img src="sumsung.webp" alt="Product Image">
+        <div class="product-info">
+            <h3>Sumsung Galaxy S24 Ultra</h3>
+            <p>₹1,07,999</p>
+        </div>
+        <input type="checkbox" class="product-checkbox" data-price="107999" onchange="updateTotalPrice()">
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product">
+        <img src="sumsung_leptop.jpg" alt="Product Image">
+        <div class="product-info">
+            <h3>Sumsung Galaxy Book4</h3>
+            <p>₹67,999</p>
+        </div>
+        <input type="checkbox" class="product-checkbox" data-price="67999" onchange="updateTotalPrice()">
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product">
+        <img src="asus1.webp" alt="Product Image">
+        <div class="product-info">
+            <h3>Asus Tuf Dash F15</h3>
+            <p>₹1,75,000</p>
+        </div>
+        <input type="checkbox" class="product-checkbox" data-price="175000" onchange="updateTotalPrice()">
+    </div>
+
+    <!-- Coming Soon Section for Other Products -->
+    <div class="product coming-soon-message">
+        <div class="product-info">
+            <h3>Other Products - Coming Soon</h3>
+            <p><strong>Other products are out of stock and will be available soon!</strong></p>
+            <p>If you want to pre-reserve, <a href="coom.html">click here</a>.</p>
+        </div>
+    </div>
+
+    <!-- Cart -->
+    <div class="cart">
+        <h2><a href="javascript:void(0);" onclick="proceedToBuy()">Proceed to Buy</a></h2>
+        <p id="total-price">Total: ₹0</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dhaval and Sons Electronics. All rights reserved.</p>
+    </footer>
+</body>
+</html>

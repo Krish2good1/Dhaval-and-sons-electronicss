@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorola Edge 50 Fusion 5G Specifications</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+            padding: 0.5rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .specifications {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        .specifications h2 {
+            color: #333;
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .specifications ul {
+            list-style: none;
+            padding: 0;
+        }
+        .specifications ul li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .specifications ul li strong {
+            color: #0073e6;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .back-btn:hover {
+            background-color: #005bb5;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Scrolling image */
+        .scrolling-image-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            margin-top: 2rem;
+        }
+        .scrolling-image {
+            display: flex;
+            animation: scroll-left 20s linear infinite;
+        }
+        .scrolling-image img {
+            margin-right: 50px; /* Space between images */
+            width: 300px; /* Adjust the image width as needed */
+            height: auto;
+        }
+        @keyframes scroll-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Motorola Edge 50 Fusion 5G Specifications</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About Us</a>
+        <a href="contect.html">Contact</a>
+        <a href="login.html">Account</a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="specifications">
+                <h2>Key Specifications</h2>
+                <ul>
+                    <li><strong>Model:</strong> Motorola Edge 50 Fusion 5G</li>
+                    <li><strong>Color:</strong> Meteorite Black</li>
+                    <li><strong>Display:</strong> 6.7-inch AMOLED, 120Hz</li>
+                    <li><strong>Resolution:</strong> 2400 x 1080 pixels</li>
+                    <li><strong>Processor:</strong> Qualcomm Snapdragon 778G</li>
+                    <li><strong>RAM:</strong> 6GB / 8GB</li>
+                    <li><strong>Storage:</strong> 128GB / 256GB</li>
+                    <li><strong>Battery:</strong> 5000mAh, 30W TurboPower Charging</li>
+                    <li><strong>Cameras:</strong>
+                        <ul>
+                            <li>Rear: 108MP (Main) + 8MP (Ultra-wide) + 2MP (Depth)</li>
+                            <li>Front: 32MP Selfie Camera</li>
+                        </ul>
+                    </li>
+                    <li><strong>Operating System:</strong> Android 12</li>
+                    <li><strong>Connectivity:</strong> 5G, Wi-Fi 6, Bluetooth 5.2, USB-C</li>
+                    <li><strong>Price:</strong> ₹23,999</li>
+                </ul>
+            </div>
+
+            <!-- Scrolling Image Section -->
+            <div class="scrolling-image-container">
+                <div class="scrolling-image">
+                    <img src="moto1.jpg" alt="Motorola Edge 50 Fusion">
+                    <img src="moto2.jpg" alt="Motorola Edge 50 Fusion">
+                    <img src="moto3.jpg" alt="Motorola Edge 50 Fusion">
+                    <img src="moto4.jpg" alt="Motorola Edge 50 Fusion">
+                </div>
+            </div>
+
+            <a href="cart.html" class="back-btn">Buy Now</a> <br>
+            <a href="smartphone.html" class="back-btn">Back to Products</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dhaval and Sons Electronics. All rights reserved.</p>
+    </footer>
+</body>
+</html>
